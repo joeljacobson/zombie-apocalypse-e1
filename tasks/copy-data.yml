@@ -1,7 +1,7 @@
 - copy:
-    src: data/citizens.csv
+    src: schema/schema.cql
     dest: /home/vagrant
 
-- copy:
-    src: schema/schema.cql
+- unarchive:
+    src: data/citizens.csv.zip
     dest: /home/vagrant

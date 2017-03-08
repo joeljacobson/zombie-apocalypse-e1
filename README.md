@@ -1,4 +1,4 @@
-###Zombie Apocalypse
+#Zombie Apocalypse
 
 VM for Zombie Apocalypse episode one.
 
@@ -20,14 +20,24 @@ Your DataStax node will be ready shortly depending on your internet connection. 
 
 When successful, halt the VM ready for the exercises `vagrant halt`
 
-Once provisioned you may SSH into the VM with `vagrant ssh`
+---
 
-Check DataStax Enterprise is running `nodetool status`
+#Episode One
 
-Start a CQL shell `cqlsh 192.168.56.10`
+To be completed with slides.
+
+##Ingest the dataset
+
+Start the already provisioned VM with `vagrant up`
+
+SSH into the VM with `vagrant ssh`
+
+Ensure DataStax Enterprise is running `nodetool status`
+
+Start a CQL Shell `cqlsh 192.168.56.10`
 
 Create the CDC keyspace `CREATE KEYSPACE IF NOT EXISTS cdc WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1 };`
 
 Create the CDC patient table `SOURCE '~/schema.cql'`
 
-Ingest the citizen data `COPY cdc.patient_data ( last_name, dob, patient_id,  first_name, job, ssn,  building_number, street_name, city, state, zipcode, company, latitude, longitude, blood_type ) FROM 'citizens.csv' WITH HEADER = true ;`
+Ingest the patient data `COPY cdc.patient_data ( last_name, dob, patient_id,  first_name, job, ssn,  building_number, street_name, city, state, zipcode, company, latitude, longitude, blood_type ) FROM 'citizens.csv' WITH HEADER = true ;`
