@@ -1,0 +1,1 @@
+create table cdc.patient_data ( last_name text, dob date,  patient_id int, first_name text, job text, ssn text, building_number int, street_name text, city text, state text, zipcode text, company text, latitude float, longitude float, blood_type text, PRIMARY KEY ( (last_name), dob, patient_id));

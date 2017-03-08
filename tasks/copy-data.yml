@@ -1,0 +1,7 @@
+- copy:
+    src: data/citizens.csv
+    dest: /home/vagrant
+
+- copy:
+    src: schema/schema.cql
+    dest: /home/vagrant
